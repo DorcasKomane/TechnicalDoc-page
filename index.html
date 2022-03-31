@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <div id="container">
+        <header>CSS Technical Documentation</header>
+
+        <nav id="navbar">
+            <header>CSS Documentation</header>
+            <ul>
+                <li><a class="nav-link" href="#css_first_steps">CSS First Steps</a></li>
+                <li><a class="nav-link" href="#prerequisites">Prerequisites</a></li>
+                <li><a class="nav-link" href="#what_is_css">What is CSS?</a></li>
+                <li><a class="nav-link" href="#what_is_css_for">What is CSS for?</a></li>
+                <li><a class="nav-link" href="#getting_started_with_css">Getting started with CSS</a></li>
+                <li><a class="nav-link" href="#adding_css_to_your_document">Adding CSS to your document</a></li>
+                <li><a class="nav-link" href="#styling_html_elements">Styling HTML elements</a></li>
+                <li><a class="nav-link" href="#adding_a_class">Adding a class</a></li>
+                <li><a class="nav-link" href="#Reference">Reference</a></li>
+            </ul>
+        </nav>
+        
+        <main id="main-doc">
+            <section class="main-section" id="css_first_steps">
+                <header>CSS First Steps</header>
+                <article>
+                    <p>
+                        CSS (Cascading Style Sheets) is used to style and lay out web pages — for example, 
+                        to alter the font, color, size, and spacing of your content, split it into multiple columns, 
+                        or add animations and other decorative features. This module provides a gentle beginning to 
+                        your path towards CSS mastery with the basics of how it works, what the syntax looks like, 
+                        and how you can start using it to add styling to HTML.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="prerequisites">
+                <header>Prerequisites</header>
+                <article>
+                    <p>Before starting this module, you should have:</p>
+                    <ol>
+                        <li>Basic familiarity with using computers, and using the Web passively (i.e. looking at it, consuming the content.)</li>
+                        <li>A basic work environment set up as detailed in <a href="#">Installing basic software</a> , and an understanding of how to create 
+                            and manage files, as detailed in <a href="#">Dealing with files</a>.</li>
+                        <li>Basic familiarity with HTML, as discussed in the <a href="#">Introduction to HTML module</a>.</li>
+                    </ol>
+                    <p class="note" id="note">
+                        Note: If you are working on a computer/tablet/other device where you don't have the ability to create your own files, 
+                        you could try out (most of) the code examples in an online coding program such as <a href="#">JSBin</a> or <a href="#">Glitch</a>.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="what_is_css">
+                <header>What is CSS?</header>
+                <article>
+                    <p>
+                        <b><a href="#">CSS</a></b> (Cascading Style Sheets) allows you to create great-looking web pages, but how does it work under the hood? 
+                        This article explains what CSS is, with a simple syntax example, and also covers some key terms about the language.
+                    </p>
+                    <p>
+                        In the <a href="#">Introduction to HTML</a> module we covered what HTML is, and how it is used to mark up documents. These documents will be readable 
+                        in a web browser. Headings will look larger than regular text, paragraphs break onto a new line and have space between them. 
+                        Links are colored and underlined to distinguish them from the rest of the text. What you are seeing is the browser's default styles — very 
+                        basic styles that the browser applies to HTML to make sure it will be basically readable even if no explicit styling is specified by 
+                        the author of the page.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="what_is_css_for">
+                <header>What is CSS for?</header>
+                <article>
+                    <p>
+                        As we have mentioned before, CSS is a language for specifying how documents are presented to users — how they are styled, laid out, etc.
+                    </p>
+                    <p>
+                        A <b>document</b> is usually a text file structured using a markup language — <a href="#">HTML</a> is the most common markup language, but you 
+                        may also come across other markup languages such as <a href="#">SVG</a> or <a href="#">XML</a>.
+                    </p>
+                    <p>
+                        <b>Presenting</b> a document to a user means converting it into a form usable by your audience. <a href="#">Browsers</a>, 
+                        like <a href="#">Firefox</a>, <a href="#">Chrome</a>, or <a href="#">Edge</a>, are designed to present documents visually, 
+                        for example, on a computer screen, projector or printer.
+                    </p>
+                    <p class="note" id="note">
+                        <b>Note:</b> A browser is sometimes called a <a href="#">user agent</a>, which basically means a computer program that represents a person inside 
+                        a computer system. Browsers are the main type of user agent we think of when talking about CSS, however, it is not the only one. 
+                        There are other user agents available — such as those which convert HTML and CSS documents into PDFs to be printed.
+                    </p>
+                    <p>
+                        CSS can be used for very basic document text styling — for example changing the <a href="#">color</a> and <a href="#">size</a> of headings and links. It can be used to 
+                        create layout — for example <a href="#">turning a single column of text into a layout</a> with a main content area and a sidebar for related information. 
+                        It can even be used for effects such as <a href="#">animation</a>. Have a look at the links in this paragraph for specific examples.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="getting_started_with_css">
+                <header>Getting started with CSS</header>
+                <article>
+                    <p>
+                        In this article we will take a simple HTML document and apply CSS to it, 
+                        learning some practical things about the language along the way.
+                    </p>
+                    <h1>Starting with some HTML</h1>
+                    <p>
+                        Our starting point is an HTML document. You can copy the code from below if 
+                        you want to work on your own computer. Save the code below as index.html in 
+                        a folder on your machine.
+                    </p>
+    
+                    <code>
+                        <pre>
+                            &lt!doctype html&gt
+                            &lthtml lang="eng">
+                            &lthead>
+                                &ltmeta charset="utf-8">
+                                &lttitle>Getting started with CSS&lt/title>
+                            &lt/head>
+                            &ltbody>
+                                &lth1>I am a level one heading&lt/h1>
+                                &ltp>This is a paragraph of text. In the text is a <span>span element</span>
+                                    and also a &lta href="https://example.com">link&lt/a>.&lt/p>
+                                &ltp>This is the second paragraph. It contains an &ltem>emphasized&lt/em> element.&lt/p>
+                                &ltul>
+                                    &ltli>Item &ltspan>one&lt/span>&lt/li>
+                                    &ltli>Item two&lt/li>
+                                    &ltli>Item &ltem>three&lt/em>&lt/li>
+                                &lt/ul>
+                            &lt/body>
+                            &lt/html>
+                        </pre>
+                    </code>
+                </article>
+            </section>
+    
+            <section class="main-section" id="adding_css_to_your_document">
+                <header>Adding CSS to your document</header>
+                <article>
+                    <p>
+                        The very first thing we need to do is to tell the HTML document that 
+                        we have some CSS rules we want it to use. There are three different ways 
+                        to apply CSS to an HTML document that you'll commonly come across, however, 
+                        for now, we will look at the most usual and useful way of doing so — linking 
+                        CSS from the head of your document.
+                    </p>
+                    <p>
+                        Create a file in the same folder as your HTML document and save it as styles.css. 
+                        The .css extension shows that this is a CSS file.
+                    </p>
+                    <p>
+                        To link styles.css to index.html add the following line somewhere inside 
+                        the <head> of the HTML document:
+                    </p>
+                    <code>
+                        h1 {
+                            color: red;
+                        }
+                    </code>
+                    <p>
+                        Save your HTML and CSS files and reload the page in a web browser. 
+                        The level one heading at the top of the document should now be red. If that happens, 
+                        congratulations — you have successfully applied some CSS to an HTML document. 
+                        If that doesn't happen, carefully check that you've typed everything correctly.
+                    </p>
+                </article>
+            </section>
+    
+            <section class="main-section" id="styling_html_elements">
+                <header>Styling HTML elements</header>
+                <article>
+                    <p>
+                        By making our heading red we have already demonstrated that we can 
+                        target and style an HTML element. We do this by targeting an element selector — this is 
+                        a selector that directly matches an HTML element name. To target all paragraphs in the 
+                        document you would use the selector p. To turn all paragraphs green you would use:
+                    </p>
+                    <code>
+                        p {
+                            color: green;
+                        }
+                    </code>
+                    <p>Try this out in your CSS document.</p>
+                </article>
+            </section>
+    
+            <section class="main-section" id="adding_a_class">
+                <header>Adding a class</header>
+                <article>
+                    <p>
+                        So far we have styled elements based on their HTML element names. 
+                        This works as long as you want all of the elements of that type in your document to look the same. 
+                        Most of the time that isn't the case and so you will need to find a way to select a subset of the 
+                        elements without changing the others. The most common way to do this is to add a class 
+                        to your HTML element and target that class.
+                    </p>
+                    <p>In your HTML document, add a <a href="#">class attribute</a> to the second list item. 
+                        Your list will now look like this:
+                    </p>
+                    <code>
+                        <pre>
+                            &ltul>
+                                &ltli>Item one&lt/li>
+                                &ltli class="special">Item two&lt/li>
+                                &ltli>Item &ltem>three&lt/em>&lt/li>
+                            &lt/ul>
+                        </pre>
+                    </code>
+                    <p>
+                        In your CSS you can target the class of special by creating a selector that starts 
+                        with a full stop character. Add the following to your CSS file:
+                    </p>
+                    <code>
+                        .special {
+                            color: orange;
+                            font-weight: bold;
+                        }
+                    </code>
+                </article>
+            </section>
+    
+            <section class="main-section" id="Reference">
+                <header>Reference</header>
+                <article>
+                  <ul>
+                    <li>
+                      All the documentation in this page is taken from
+                      <a
+                        href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps"
+                        target="_blank"
+                        >MDN
+                      </a>
+                    </li>
+                  </ul>
+                </article>
+            </section>
+        </main>
+        <footer>&copy2022 CSS Technical Documentation</footer>
+    </div>
+</html>
+
