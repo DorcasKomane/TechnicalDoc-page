@@ -1,8 +1,10 @@
 :root {
     --color-white: #fbf8f8;
+    --color-lightergrey: #f0efef;
     --color-lightgrey: #d8d7d7;
     --color-darkgrey: #6d6c6c;
     --color-black: #2b2b2b;
+    --color-blue: #4682b4;
 }
 
 * {
@@ -13,6 +15,7 @@
 
 body {
     background: var(--color-white);
+    font-family: 'Open Sans', sans-serif;
 }
 
 #container {
@@ -21,37 +24,100 @@ body {
     height: 100vh;
     grid-template-areas: "nav head"
                          "nav  main"
-                         "foot  foot";
+                         "nav  foot";
     grid-template-rows: 50px 1fr 30px;
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 200px 1fr;
+
   }
   
   #container > header {
     grid-area: head;
-    background-color: var(--color-white);
-    height: 250px;
+    background-color: var(--color-blue);
+    height: 100px;
     color: var(--color-black);
     font-family: 'Open Sans', sans-serif;
     font-weight: 500;
     font-size: 40px;
     text-align: center;
-    margin: 20px;
+    padding-top: 15px;
   }
   
   #container > nav {
+    height: 100vh;
     grid-area: nav;
     background-color: var(--color-lightgrey);
     border-right: solid;
     border-color: var(--color-darkgrey);
+    position: fixed;
+  }
+  nav > header {
+      font-weight: 400;
+      font-size: 25px;
+      color: var(--color-black);
+      text-align: center;
+      padding-top: 20px;
+      
+  }
+
+  a {
+      text-decoration: none;
+  }
+
+  nav > ul {
+      padding: 20px 10px;
+      list-style: none;
   }
   
+  .nav-link {
+      cursor: pointer;
+      line-height: 40px;
+      color: var(--color-blue);
+      padding: 10px;
+      display: block;
+  }
+
+  .nav-link:hover {
+      color: var(--color-white);
+      background-color: var(--color-blue);
+  }
+
   #container > main {
     grid-area: main;
     background-color: var(--color-white);
-    margin: 50px 20px;
+    margin: 50px 20px 30px 100px;
+  }
+
+  .main-section > header {
+      font-size: 25px;
+      font-weight: 400;
+      margin: 10px 0;
+  }
+
+  article {
+    margin: 20px;
+  }
+
+  .main-section > p {
+      margin: 10px;
+      line-height: 5px;
+  }
+
+  .main-section > ol {
+      text-indent: 5px;
+  }
+
+  code {
+      background: var(--color-lightergrey);
+      padding: 20px;
+      margin: 300px 100px;
+      border-left: 3px;
   }
   
   #container > footer {
     grid-area: foot;
-    background-color: #8cffa0;
+    background-color: var(--color-blue);
+    height: 50px;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: 100; 
   }
